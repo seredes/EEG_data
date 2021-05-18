@@ -27,6 +27,7 @@ The test data used the same 10 alcoholic and 10 control subjects as with the tra
 3. The Full Data Set 
 
 This data set contains all 120 trials for **122 subjects**. The entire set of data is about 700 MBytes. 
+
 NOTE: I checked the full dataset from the UCI website, which I assume is eeg_full.tar. While there are 122 participants in the full dataset, as stated in the description, it looks like that the number of trials recorded per participant is not the same for each participant. For example participant 365 has 93 trials on record, while participant 364 has 88 trials on record. 
 
 NOTE: There are 17 trials with empty files in co2c1000367. Some trials have "err" notices, e.g., search/grep for "err" and see "S2 match err" or "S2 nomatch err" etc. 
