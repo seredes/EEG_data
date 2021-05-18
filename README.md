@@ -34,9 +34,10 @@ NOTE: There are 17 trials with empty files in co2c1000367. Some trials have "err
 
 **DATA DESCRIPTION**
 
-The folder SMNI_CMI_TRAIN contains the train data from the _The Large Data Set_ (see description above). The dataset contains the data for 20 participants, 10 in the control group and 10 in the alcoholic group. Each participant identifies a subfolder, such as "_co2a0000364_", "_co2a0000365_" etc. If the subfolder is named "co2a0000364" that's participant "364", and we know that he or she was in the alcoholic group because of the "a" in "co2a..." If there was a "c" in place of the a, that would be a participant in the control group.
+The folder SMNI_CMI_TRAIN contains the train data from the _The Large Data Set_ (see description above). The dataset contains the data for 20 participants, 10 in the control group and 10 in the alcoholic group. Each participant identifies a subfolder, such as _co2a0000364_, _co2a0000365_ etc. If the subfolder is named _co2a0000364_, for example, that's participant "364", and we know that he or she was in the alcoholic group because of the "a" in "co2a..." If there was a "c" in place of the a, that would be a participant in the control group.
 
-Each partcipant subfolder contains 30 .gz files (such as "_co2a0000364.rd.025.gz_", "_co2a0000364.rd.031.gz_") Each gz. file stands for one trial, and there are 10 trials for each condition. 
+Each partcipant subfolder contains 30 .gz files (such as _co2a0000364.rd.025.gz_, _co2a0000364.rd.031.gz_) 
+Each gz. file stands for one trial, and there are 10 trials for each condition. 
 
 The .gz trial file is the object passed in the function `import_eeg_file`, contained in the EEG_load_function.py file. The function returns a dataframe with 64 columns, one for each electrode.
 
