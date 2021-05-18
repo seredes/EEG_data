@@ -13,8 +13,7 @@ There were 122 subjects and each subject completed 120 trials where different st
 
 Data download: https://archive.ics.uci.edu/ml/machine-learning-databases/eeg-mld/
 
-**There are three versions of the EEG data set. 
-**
+**There are three versions of the EEG data set.**
 1. The Small Data Set 
 The small data set (smni97_eeg_data.tar.gz) contains data for the 2 subjects, alcoholic a_co2a0000364 and control c_co2c0000337. For each of the 3 matching paradigms, c_1 (one presentation only), c_m (match to previous presentation) and c_n (no-match to previous presentation), 10 runs are shown. 
 
