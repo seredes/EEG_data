@@ -45,7 +45,8 @@ The .gz trial file is the object passed in the function `import_eeg_file`, conta
 **FINAL OUTCOME FROM FULL DATASET**
 
 At the end, the script should run on the full dataset,`eeg_full.tar`, and return six dataframes for the means, and six dataframes for the standard deviation. 
-Each one of the six dataframes represents the average for a condition for a group. Thus:
+Each one of the six dataframes represents the average for a condition for a group. So for the means we will have:
+
 - average frequency for control group, single stimulus, per time point per channel
 - average frequency for control group, double stimulus matched, per time point per channel
 - average frequency for control group, double stimulus non matched, per time point per channel
@@ -53,8 +54,13 @@ Each one of the six dataframes represents the average for a condition for a grou
 - average frequency for alcoholic group, double stimulus matched, per time point per channel
 - average frequency for alcoholic group, double stimulus non matched, per time point per channel
 
+Same for the variances.
+
 Each one of the dataframes will have a header row and 256 rows, one for each timepoint. It will have one index column for the timepoints, and then 64 columns, one for each channel.
 
-Basically, each dataset looks like the output of `import_eeg_file`. The only difference is that `import_eeg_file`'s output header looks like this:
+Basically, for what concerns the structure of the spreadsheet, each dataset looks like the output of `import_eeg_file`: time points as rows and channels as columns.
+The only difference is that `import_eeg_file`'s output header looks like this:
+
+
 
 
