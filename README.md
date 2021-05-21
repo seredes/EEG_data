@@ -59,9 +59,13 @@ Same for the variances.
 Each one of the dataframes will have a header row and 256 rows, one for each timepoint. It will have one index column for the timepoints, and then 64 columns, one for each channel.
 
 Basically, for what concerns the structure of the spreadsheet, each dataset looks like the output of `import_eeg_file`: time points as rows and channels as columns.
-The only difference is that `import_eeg_file`'s output header looks like this:
+The only difference is that `import_eeg_file`'s output header of a single .gz file looks like this:
 
 ![header](https://user-images.githubusercontent.com/20558980/119203723-c125b500-ba61-11eb-8cdd-831f0c66572f.jpg)
+
+Instead the header of the dataframe with the averages will look lile this (obviously with different numbers):
+
+![header2](https://user-images.githubusercontent.com/20558980/119203913-30030e00-ba62-11eb-92fe-014620efcd18.jpg)
 
 
 
