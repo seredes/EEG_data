@@ -61,6 +61,7 @@ Each one of the dataframes will have a header row and 256 rows, one for each tim
 Basically, for what concerns the structure of the spreadsheet, each dataset looks like the output of `import_eeg_file`: time points as rows and channels as columns.
 The only difference is that `import_eeg_file`'s output header looks like this:
 
+![header](https://user-images.githubusercontent.com/20558980/119203723-c125b500-ba61-11eb-8cdd-831f0c66572f.jpg)
 
 
 
