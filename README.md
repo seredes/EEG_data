@@ -40,20 +40,21 @@ The folder SMNI_CMI_TRAIN contains the train data from the _The Large Data Set_ 
 Each partcipant subfolder contains 30 .gz files (such as _co2a0000364.rd.025.gz_, _co2a0000364.rd.031.gz_) 
 Each gz. file stands for one trial, and there are 10 trials for each condition. 
 
-The .gz trial file is the object passed in the function `import_eeg_file`, contained in the EEG_load_function.py file. The function returns a dataframe with 64 columns, one for each electrode.
+The .gz trial file is the object passed in the function `import_eeg_file`, contained in the EEG_load_function.py file. The function returns a dataframe with 64 columns, one for each electrode (a.k.a. channels).
 
 **FINAL OUTCOME FROM FULL DATASET**
 
 At the end, the script should run on the full dataset,`eeg_full.tar`, and return six dataframes for the means, and six dataframes for the standard deviation. 
 Each one of the six dataframes represents the average for a condition for a group. Thus:
-- average frequency for control group, single stimulus
-- average frequency for control group, double stimulus matched
-- average frequency for control group, double stimulus non matched
-- average frequency for alcoholic group, single stimulus
-- average frequency for alcoholic group, double stimulus matched
-- average frequency for alcoholic group, double stimulus non matched
+- average frequency for control group, single stimulus, per time point per channel
+- average frequency for control group, double stimulus matched, per time point per channel
+- average frequency for control group, double stimulus non matched, per time point per channel
+- average frequency for alcoholic group, single stimulus, per time point per channel
+- average frequency for alcoholic group, double stimulus matched, per time point per channel
+- average frequency for alcoholic group, double stimulus non matched, per time point per channel
 
 Each one of the dataframes will have a header row and 256 rows, one for each timepoint. It will have one index column for the timepoints, and then 64 columns, one for each channel.
 
-Basically, each dataset looks like the output of 
+Basically, each dataset looks like the output of `import_eeg_file`. The only difference is that `import_eeg_file`'s output header looks like this:
+
 
