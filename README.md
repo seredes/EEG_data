@@ -19,16 +19,17 @@ Data download: https://archive.ics.uci.edu/ml/machine-learning-databases/eeg-mld
 
 The small data set (smni97_eeg_data.tar.gz) contains data for the 2 subjects, alcoholic a_co2a0000364 and control c_co2c0000337. For each of the 3 matching paradigms, c_1 (one presentation only), c_m (match to previous presentation) and c_n (no-match to previous presentation), 10 runs are shown. 
 
-**2. The Large Data Set**
+2. The Large Data Set
 
 The large data set (**SMNI_CMI_TRAIN.tar.gz** and **SMNI_CMI_TEST.tar.gz**) contains data for 10 alcoholic and 10 control subjects, _with 10 runs (=trials) per subject per paradigm_. Since there are three paradigms (one stimulus, two matched stimuli, two non-matched stimuli) there are 30 runs for each subjects.
 The test data used the same 10 alcoholic and 10 control subjects as with the training data, but with 10 out-of-sample runs per subject per paradigm. 
 
-3. The Full Data Set 
+**3. The Full Data Set**
 
-This data set contains all 120 trials for **122 subjects**. The entire set of data is about 700 MBytes. 
+This data set, `eeg_full.tar` contains all 120 trials for **122 subjects**. The entire set of data is about 700 MBytes. 
+Actually, each subject has a certain number of trials missing (those were the trials that were unsuccessfull.) So each partcipant's folder contains a different number of .gz files. For example participant 365 has 93 trials on record, while participant 364 has 88 trials on record. 
 
-NOTE: I checked the full dataset from the UCI website, which I assume is eeg_full.tar. While there are 122 participants in the full dataset, as stated in the description, it looks like that the number of trials recorded per participant is not the same for each participant. For example participant 365 has 93 trials on record, while participant 364 has 88 trials on record. 
+The dataset is on the UCI website at this link: https://archive.ics.uci.edu/ml/machine-learning-databases/eeg-mld/
 
 NOTE: There are 17 trials with empty files in co2c1000367. Some trials have "err" notices, e.g., search/grep for "err" and see "S2 match err" or "S2 nomatch err" etc. 
 
@@ -40,4 +41,19 @@ Each partcipant subfolder contains 30 .gz files (such as _co2a0000364.rd.025.gz_
 Each gz. file stands for one trial, and there are 10 trials for each condition. 
 
 The .gz trial file is the object passed in the function `import_eeg_file`, contained in the EEG_load_function.py file. The function returns a dataframe with 64 columns, one for each electrode.
+
+**FINAL OUTCOME FROM FULL DATASET**
+
+At the end, the script should run on the full dataset,`eeg_full.tar`, and return six dataframes for the means, and six dataframes for the standard deviation. 
+Each one of the six dataframes represents the average for a condition for a group. Thus:
+- average frequency for control group, single stimulus
+- average frequency for control group, double stimulus matched
+- average frequency for control group, double stimulus non matched
+- average frequency for alcoholic group, single stimulus
+- average frequency for alcoholic group, double stimulus matched
+- average frequency for alcoholic group, double stimulus non matched
+
+Each one of the dataframes will have a header row and 256 rows, one for each timepoint. It will have one index column for the timepoints, and then 64 columns, one for each channel.
+
+Basically, each dataset looks like the output of 
 
